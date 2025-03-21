@@ -6,10 +6,8 @@ END_VAR
 
 NETWORK 1: Motor Start/Stop Circuit
 |--| |--StartButton--+--| |--MotorRunning--|( )--MotorRunning--|
-|                    |
-|                    +--|/|--StopButton--|
-|                    |
-|                    +--|/|--OverloadRelay--|
+|                    --+--|/|--StopButton--|+--
+|                    --+--|/|--OverloadRelay--|+--
 |
 
 NETWORK 2: Alarm Light Control
