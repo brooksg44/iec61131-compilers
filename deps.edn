@@ -1,0 +1,21 @@
+{:paths ["src" "resources"]
+ :deps {org.clojure/clojure {:mvn/version "1.11.1"}
+        instaparse/instaparse {:mvn/version "1.4.12"}
+        org.clojure/tools.cli {:mvn/version "1.0.219"}}
+
+ :aliases
+ {:run-ld-compiler
+  {:main-opts ["-m" "iec61131.ld-compiler"]}
+
+  :run-st-compiler
+  {:main-opts ["-m" "iec61131.st-compiler"]}
+
+  :run-il-compiler
+  {:main-opts ["-m" "iec61131.il-compiler"]}
+
+  :uberjar
+  {:replace-deps {com.github.seancorfield/depstar {:mvn/version "2.1.303"}}
+   :exec-fn hf.depstar/uberjar
+   :exec-args {:aot true
+               :jar "iec61131-compilers.jar"
+               :main-class "iec61131.core"}}}}
